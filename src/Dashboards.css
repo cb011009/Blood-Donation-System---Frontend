@@ -34,22 +34,12 @@
 }
 
 .firstheading{
+  margin-top: 12px;
   margin-left:35%;
   color:grey;
   font-size:30px;
 }
-a{
-  padding:0 0px ;
-  background-color:none ;
-  font:12px;
-  color:rgb(255, 255, 255) ;
-  text-decoration: none ;
-  font-size: 12px;
-}
 
-a:hover{
-  color:rgb(179, 173, 173) ;
-}
 
 body{
   background-image:url('images/background1.webp');
@@ -122,14 +112,14 @@ hr{
     margin-left:-1%;
     margin-top:-30%;
   }
-  h3,h2,h1{
+  .finalheading,.subheading,.firstheading{
     font-size:small;
   }
-h3{
+.firstheading{
   margin-bottom:10%;
 }
 
-  li{
+  .list{
     font-size:12px;
     margin-left:-12%;
     margin-bottom:3%;
@@ -174,13 +164,13 @@ h3{
   img{
    width:fit-content;
   }
-  h3,h2,h1{
+  .finalheading,.subheading,.firstheading{
     font-size:x-large;
   }
-li{
+.list{
   font-size: 25px;
 }
-h2{
+.subheading{
   margin-left: 37%;;
 }
 }

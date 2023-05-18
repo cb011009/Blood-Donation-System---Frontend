@@ -23,78 +23,78 @@ function Navigation(props) {
       <div className={`sidebar ${isSideBarOpen ? "active" : ""}`}>
         {props.user === "donor" && (
           <ul className="sidebarnav">
-            <li>
-              <a href="/Dashboards">DONOR DASHBOARD</a>
+            <li className="lists">
+              <a href="/Dashboards" className="link">DONOR DASHBOARD</a>
             </li>
-            <li>
-              <a href="/Donorhistory">DONATION HISTORY </a>
+            <li className="lists">
+              <a href="/Donorhistory" className="link">DONATION HISTORY </a>
             </li>
-            <li>
-              <a href="/Donorpoints">VIEW DONOR POINTS</a>
+            <li className="lists">
+              <a href="/Donorpoints" className="link">VIEW DONOR POINTS</a>
+            </li >
+            <li className="lists">
+              <a href="/FAQS" className="link">FAQS</a>
             </li>
-            <li>
-              <a href="/FAQS">FAQS</a>
+            <li className="lists">
+              <a href="/Location1" className="link">FIND NEAREST LOCATION</a>
             </li>
-            <li>
-              <a href="/Location1">FIND NEAREST LOCATION</a>
-            </li>
-            <li>
-              <a href="/SignUp">LOGOUT</a>
+            <li className="lists">
+              <a href="/SignUp" className="link">LOGOUT</a>
             </li>
           </ul>
         )}
 
         {props.user === "admin" && (
           <ul className="sidebarnav">
-            <li>
-            <a href="/Dashboards">ADMIN DASHBOARD</a>
+            <li className="lists">
+            <a href="/Dashboards" className="link">ADMIN DASHBOARD</a>
             </li>
-            <li>
-            <a href="/Pendingrequests">PENDING REQUESTS</a>
+            <li className="lists">
+            <a href="/Pendingrequests" className="link">PENDING REQUESTS</a>
+            <li className="subnav">HOSPITAL</li>
+            <li className="subnav">BLOOD BANK</li>
+            </li >
+            <li className="lists">
+            <a href="/Acceptedrequests" className="link">ACCEPTED REQUESTS</a>
             <li className="subnav">HOSPITAL</li>
             <li className="subnav">BLOOD BANK</li>
             </li>
-            <li>
-            <a href="/Acceptedrequests">ACCEPTED REQUESTS</a>
-            <li className="subnav">HOSPITAL</li>
-            <li className="subnav">BLOOD BANK</li>
-            </li>
-            <li>
-            <a href="/SignUp">LOGOUT</a>
+            <li className="lists">
+            <a href="/SignUp" className="link">LOGOUT</a>
             </li>
           </ul>
         )}
 
         {props.user === "hospital" && (
           <ul className="sidebarnav">
-            <li>
-            <a href="/Dashboards">HOSPITAL DASHBOARD</a>
+            <li className="lists">
+            <a href="/Dashboards" className="link">HOSPITAL DASHBOARD</a>
             </li>
-            <li>
-            <a href="/HospitalChart">BLOOD COUNT</a>
+            <li className="lists">
+            <a href="/HospitalChart" className="link">BLOOD COUNT</a>
             </li>
-            <li>
-            <a href="/BloodBankSearch">BLOOD BANK SEARCH</a>
+            <li className="lists">
+            <a href="/BloodBankSearch" className="link">BLOOD BANK SEARCH</a>
             </li>
-            <li>
-            <a href="/SignUp">LOGOUT</a>
+            <li className="lists">
+            <a href="/SignUp" className="link">LOGOUT</a>
             </li>
           </ul>
         )}
 
         {props.user === "bloodbank" && (
           <ul className="sidebarnav">
-            <li>
-              <a href="/Dashboards">DASHBOARD</a>
+            <li className="lists">
+              <a href="/Dashboards" className="link">DASHBOARD</a>
             </li>
-            <li>
-              <a href="/BloodBankChart">BLOOD CHART</a>
+            <li className="lists">
+              <a href="/BloodBankChart" className="link">BLOOD CHART</a>
             </li>
-            <li>
-              <a href="/Donorsearch">DONOR BASE</a>
+            <li className="lists">
+              <a href="/Donorsearch" className="link">DONOR BASE</a>
             </li>
-            <li>
-            <a href="/SignUp">LOGOUT</a>
+            <li className="lists">
+            <a href="/SignUp" className="link">LOGOUT</a>
             </li>
           </ul>
         )}
