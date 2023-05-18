@@ -1,0 +1,158 @@
+*{
+  background-color: whitesmoke;
+}
+.key {
+    border: 1px solid black;
+    display: flex;
+    border-radius:25px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1px;
+    margin-bottom: 2px;
+    width:20%;
+    margin-left:85%;
+    margin-top:-55%;
+  }
+  .borderbox{
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    width:90%;
+    margin-left:5%;
+    height:auto;
+    padding:5%;
+    border:3px solid #000000;
+    background-color: whitesmoke;
+  }
+  .circle {  
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;   
+  }
+  
+  .green {
+    background-color: green;
+    margin-top:-22%;
+    margin-left:-25%;
+  }
+  
+  .red {
+    background-color: red;
+    margin-top:2%;
+    margin-left:-38%;
+    
+  }
+  
+  .info {
+    margin-top: -23%;
+  }
+  .two{
+    margin-left:-17%;
+  }
+  .one{
+    margin-left:-4%;
+    margin-top:-20%;
+  }
+  .Barchart{
+    margin-left:10%;
+    margin-top:-2%;
+  }
+
+  .IncrementDecrementButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top:40%;
+    margin-bottom:5%;
+  }
+  
+  .IncrementDecrementButtons > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
+  }
+
+  .btn1{
+    margin-top:2%;
+    margin-left:80%;
+    margin-bottom:0.5%;
+  }
+  .btn2{
+    margin-left:80%;
+    width:12.6%;
+  }
+  h3{
+    margin-top:-5px;
+    margin-bottom:4%;
+  }
+.bloodcount{
+  margin-top:2%;
+  margin-bottom:1%;
+
+}
+.Bloodtypetext{
+  color:grey;
+  margin-top:1%;
+}
+.frequencytext{
+  color:grey;
+}
+
+input[type="number"]{
+ color: rgb(1, 1, 1);
+  border-radius:22px;
+  border: 2px solid rgb(0, 0, 0);
+  padding:8px;
+  margin-bottom: 5px;
+  font-size:12px;
+  width:160px;
+}
+.submit {
+  color: rgb(255, 255, 255);
+  border-radius:22px;
+  border: 2px solid rgb(0, 0, 0);
+  padding:8px;
+  background-color: black;
+  font-size:15px;
+  margin-left: 80%;
+ margin-top:-5%;
+
+}
+.submit:hover {
+  background-color: gray;
+  color: white;
+}
+.heading{  
+  margin-top:0.5%;
+}
+.bloodtypes{
+  margin-right:5%;
+}
+@media only screen and (max-width: 426px) {
+  .borderbox{
+   width:890px;
+  }
+  .Barchart{
+    margin-left:-2%;
+  }
+  .key{
+    margin-left:82%;
+    margin-top:-65%;
+  }
+
+  .IncrementDecrementButtons {
+
+    margin-top:50%;
+    margin-bottom:5%;
+  }
+
+  .bloodtypes{
+    margin-right:9%;
+  }
+  input[type="number"]{
+     width:10px;
+   }
+}

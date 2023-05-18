@@ -1,0 +1,121 @@
+import React, { useState  } from "react";
+import "./BloodCountChart.css";
+
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Cell,
+} from "recharts";
+
+
+function BloodCountChart() {
+  const [bloodCounts, setBloodCounts] = useState([
+    { name: "A+", count: 0 },
+    { name: "A-", count: 0 },
+    { name: "B+", count: 0 },
+    { name: "B-", count: 0 },
+    { name: "AB+", count: 0 },
+    { name: "AB-", count: 0 },
+    { name: "O+", count: 0 },
+    { name: "O-", count: 0 },
+  ]);
+
+  function handleCountUpdate(index, value) {
+    if (isNaN(value)) {
+      value = 0;
+    }
+    const newValue = value < 0 ? 0 : value;
+
+    setBloodCounts((prevState) =>
+      prevState.map(
+        (count, i) => (i === index ? { ...count, count: newValue } : count),
+        console.log(bloodCounts),
+        console.log(index),
+        console.log(prevState),
+        console.log(value)
+
+      )
+    );
+  }
+  
+  return (
+    <div className="borderbox">
+      <h3 className="heading">BLOOD STOCK LEVELS</h3>
+      <p className="frequencytext">Frequency of blood group <br/> (In Pints) </p>
+      <div className="Barchart">
+        <BarChart width={800} height={400} data={bloodCounts}>
+          <CartesianGrid strokeDasharray="5" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Bar dataKey="count" onClick={() => {}}>
+            {bloodCounts.map((bloodCount, index) => {
+              const barColor = bloodCount.count > 2 ? "green" : "red";
+              return <Cell key={index} fill={barColor} />;
+            })}
+          </Bar>
+        </BarChart>
+        
+      </div>
+      <div className="key">
+        <p>Key</p>
+        <br />
+        <div>
+          <div className="circle green"></div>
+          <p className="info one">Supply is stable</p>
+        </div>
+        <div>
+          <div className="circle red"></div>
+          <p className="info two">
+            Supply is at a <br/> critical level
+          </p>
+        </div>
+      </div>
+      
+      <div className="IncrementDecrementButtons">
+  <p className="Bloodtypetext">Blood Type</p>
+    <p className="bloodcount">Blood Count</p>
+  {bloodCounts.map((bloodCountno, index) => (
+    console.log(bloodCountno),
+    <div key={index} >
+      <span className="bloodtypes">{bloodCountno.name}</span>
+      <input
+        type="number"
+        step="0.01"
+        value={bloodCountno.count}
+        onChange={(e) =>
+          handleCountUpdate(index, parseFloat(e.target.value))
+        }
+        onWheel={(e) => e.target.blur()}
+      />
+      </div>
+   
+  ))}
+  <button className="submit" >Submit Changes</button>
+</div>
+
+</div>);}
+
+
+
+export default BloodCountChart;
+
+/*<div className="IncrementDecrementButtons">
+{bloodCounts.map((bloodCount, index) => (
+  console.log(bloodCount),
+  <div key={index}>
+    <span>{bloodCount.name}</span>
+    <button onClick={() => handleCountUpdate(index, bloodCount.count - 1 < 0 ? 0 : bloodCount.count - 1)}>-</button>
+    <input
+      type="string"
+      value={bloodCount.count}              
+      
+    />
+    <button onClick={() => handleCountUpdate(index, bloodCount.count + 1)}>+</button>
+  </div>
+))}
+</div>*/

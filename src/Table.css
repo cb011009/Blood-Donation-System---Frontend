@@ -1,0 +1,125 @@
+
+.tablemain {
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    width:100%;
+    margin-top:10px;
+
+  }
+
+  select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+
+  }
+  
+  .tablecover{
+  background-color: white;
+  box-shadow: 0 0 10px rgba(43, 43, 43, 0.7);
+  border-radius: 25px;
+  width:90%;
+  margin-left:5%;
+  height:auto;
+  padding:5%;
+  border:3px solid #000000;
+ 
+  }
+
+  .tablename{
+    font-size:20px;
+    margin-left:40%;
+    
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #000000;   
+  }
+  
+
+  .submitbutton{
+    color: rgb(255, 255, 255);
+    border-radius:22px;
+    border: 2px solid rgb(0, 0, 0);
+    padding:8px;
+    width:20%;
+    background-color: black;
+    margin-left:75%;
+    margin-top:2%;
+  }
+
+  .submitbutton:hover {
+    background-color: gray;
+    color: white;
+  }
+
+  th {
+    font-weight:lighter;
+    color:#ffffff;
+    background-color: #464646;
+    font-size:12px;  
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  input[type="text"],input[type="number"]  {
+    border: 1px solid #b3adad;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  input[type="text"]:focus {
+    outline: none;
+    border-color: #989ea3;
+  }
+
+  .search{
+    margin-left:12px;
+    width:50%;
+    border-radius:25px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+  
+    th, td, input[type="text"] {
+      font-size: 12px;
+    }
+   
+    .App table {
+      font-size: 14px;
+      margin-left:-16%;
+    }
+  }
+  
+  @media only screen and (max-width: 320px) {
+  
+  table{
+    margin-left: 4px!important;
+    padding:0px;
+  }
+  th, td, input[type="text"] {
+    font-size: 8px;
+    padding:0px;
+  }
+  
+  }
+  .search-icon {
+  
+  margin-left:110%;
+  margin-top:-15%;
+  
+  }
+  
+  .search{
+    width:50% !important;
+    margin-left:20%;
+    margin-top:2%;
+  }
