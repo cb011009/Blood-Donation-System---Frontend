@@ -7,14 +7,18 @@
     color:black;
     font-family:Arial;
     border: 3px solid rgb(0, 0, 0);
-    border-radius:25px;
+    border-radius:5px;
     margin-left:25%;
     margin-top:5%;
   }
+
   .space{
     margin-top:5%;
   }
+
   .heading{
+    font-size:large;
+    margin-left:40%;
     font-family:Arial;
     color:black;
     text-decoration: none;

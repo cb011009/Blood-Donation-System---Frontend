@@ -5,7 +5,7 @@ import  profilepic from "./images/common.png";
 
 function Dashboards(props) {
 
-  let choice = 'hospital';
+  let choice = 'donor';
   let content = '';
 
 
@@ -24,24 +24,32 @@ function Dashboards(props) {
         <div className="dashboardinfo">
           <h3 className="finalheading">PERSONAL INFORMATION</h3>
           <ul>
+          <div class="leftcolumn">
             <li className="list">
               NAME: <span>{props.name}</span>
             </li>
             <li className="list">
-              DATE OF BIRTH: {props.date}
+            DONOR NUMBER: {props.number}             
+            </li>
+            </div>
+            <div class="rightcolumn">
+            <li className="list">
+            DATE OF BIRTH: {props.date}
             </li>
             <li className="list">
-              DONOR NUMBER: {props.number}
+            BLOOD TYPE:{props.bloodType}
             </li>
+            </div>
+            <div class="middlecolumn1">
             <li className="list">
-              ADDRESS: {props.address}
+            ADDRESS: {props.address}    
             </li>
+            </div>
+            <div class="middlecolumn2">
             <li className="list">
-              TELEPHONE: {props.telephone}
+            TELEPHONE: {props.telephone}        
             </li>
-            <li className="list">
-              BLOOD TYPE:{props.bloodType}
-            </li>
+            </div>
           </ul>
 
         </div>

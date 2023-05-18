@@ -2,10 +2,8 @@
 .tablemain {
     border-collapse: collapse;
     margin-bottom: 20px;
-    border: 2px solid #ccc;
     width:100%;
     margin-top:10px;
-
   }
 
   select {
@@ -20,29 +18,23 @@
   
   .tablecover{
   background-color: white;
-  box-shadow: 0 0 10px rgba(43, 43, 43, 0.7);
-  border-radius: 25px;
   width:90%;
   margin-left:5%;
   height:auto;
   padding:5%;
-  border:3px solid #000000;
- 
   }
 
   .tablename{
     font-size:20px;
     margin-left:40%;
-    
   }
 
   th, td {
-    padding: 10px;
+    padding: 15px;
     text-align: left;
-    border: 1px solid #000000;   
+    font-size:15px; 
   }
   
-
   .submitbutton{
     color: rgb(255, 255, 255);
     border-radius:22px;
@@ -62,12 +54,12 @@
   th {
     font-weight:lighter;
     color:#ffffff;
-    background-color: #464646;
+    background-color: #000000;
     font-size:12px;  
   }
   
   tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #f0f0f0;
   }
   
   input[type="text"],input[type="number"]  {
@@ -90,7 +82,7 @@
   @media only screen and (max-width: 600px) {
   
     th, td, input[type="text"] {
-      font-size: 12px;
+      font-size: 10px;
     }
    
     .App table {

@@ -23,24 +23,32 @@ function Navigation(props) {
       <div className={`sidebar ${isSideBarOpen ? "active" : ""}`}>
         {props.user === "donor" && (
           <ul className="sidebarnav">
+            <h2 className="myac"> MY ACCOUNT </h2>
+            <hr className="navhr"/>
             <li className="lists">
-              <a href="/Dashboards" className="link">DONOR DASHBOARD</a>
+              <a href="/Dashboards" className="link">DONOR DASHBOARD </a>
             </li>
+            <hr className="navhr"/>
             <li className="lists">
               <a href="/Donorhistory" className="link">DONATION HISTORY </a>
             </li>
+            <hr className="navhr"/>
             <li className="lists">
               <a href="/Donorpoints" className="link">VIEW DONOR POINTS</a>
             </li >
+            <hr className="navhr"/>
             <li className="lists">
               <a href="/FAQS" className="link">FAQS</a>
             </li>
+            <hr className="navhr"/>
             <li className="lists">
               <a href="/Location1" className="link">FIND NEAREST LOCATION</a>
             </li>
+            <hr className="navhr"/>
             <li className="lists">
               <a href="/SignUp" className="link">LOGOUT</a>
             </li>
+            <hr className="navhr"/>
           </ul>
         )}
 

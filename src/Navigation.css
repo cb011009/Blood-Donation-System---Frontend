@@ -19,7 +19,7 @@
 .lists {
   text-decoration: none ;
   color: rgb(5, 5, 5);
-  padding: 0px;
+  padding: 8px;
 }
 
 .link:hover {
@@ -28,6 +28,10 @@
   color: rgb(205, 196, 196);
 }
 
+.navhr{
+  color: rgb(255, 255, 255);
+  
+}
 
 .subnav{
   color:white;
@@ -78,3 +82,9 @@
   transform: translateX(0); 
 }
 
+.myac{
+  color:white;
+  font-size:23px;
+  margin-top:10%;
+  margin-left: -12px;
+}
