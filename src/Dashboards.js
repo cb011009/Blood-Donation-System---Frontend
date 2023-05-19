@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 import "./Dashboards.css";
 import Navigation from "./Navigation";
 import  profilepic from "./images/common.png";
@@ -8,14 +8,12 @@ function Dashboards(props) {
   let choice = 'donor';
   let content = '';
 
-
   switch(choice){
     case 'donor':
       content = <div>
       <Navigation user="donor"/>
       <div className="maincontainer">
         <div className="dashboard">
-          <h1 className="firstheading">WELCOME {props.name}!</h1>
           <h2 className="subheading">YOUR DASHBOARD</h2>
           <div className='iconImage'>
             <img src={profilepic} className='donorIcon' />
@@ -26,36 +24,33 @@ function Dashboards(props) {
           <ul>
           <div class="leftcolumn">
             <li className="list">
-              NAME: <span>{props.name}</span>
+            Name: <span>{props.name}</span>
             </li>
             <li className="list">
-            DONOR NUMBER: {props.number}             
+            Donor Number: {props.number}             
             </li>
             </div>
             <div class="rightcolumn">
             <li className="list">
-            DATE OF BIRTH: {props.date}
+            Date Of Birth: {props.date}
             </li>
             <li className="list">
-            BLOOD TYPE:{props.bloodType}
+            Blood Type:{props.bloodType}
             </li>
             </div>
             <div class="middlecolumn1">
             <li className="list">
-            ADDRESS: {props.address}    
+            Address: {props.address}    
             </li>
             </div>
             <div class="middlecolumn2">
             <li className="list">
-            TELEPHONE: {props.telephone}        
+            Telephone: {props.telephone}        
             </li>
             </div>
           </ul>
-
         </div>
-
       </div>
-
 </div>
   break;
   case 'admin':
@@ -157,8 +152,6 @@ case 'bloodbank':
   </div>
 </div>
 break;
-
-
   }
   return (
 <div>
@@ -168,4 +161,177 @@ break;
 }
 
 export default Dashboards;
+*/
 
+import React from "react";
+import "./Dashboards.css";
+import Navigation from "./Navigation";
+import profilepic from "./images/common.png";
+
+function Dashboards(props) {
+ const UserType = {
+   DONOR: 'donor',
+   ADMIN: 'admin',
+   HOSPITAL: 'hospital',
+   BLOODBANK: 'bloodbank'
+};
+
+const choice = UserType.DONOR;
+let content = null;
+
+if (choice === UserType.DONOR) {
+content = (
+<div>
+<Navigation user={UserType.DONOR} />
+<div className="maincontainer">
+<div className="dashboard">
+<div className='iconImage'>
+</div>
+</div>
+<div className="dashboardinfo">
+<h3 className="finalheading">Personal Information</h3>
+<ul>
+<hr className="hrtag"/>
+<div className="leftcolumn">
+<li className="list">
+NAME <span>{props.name}</span>
+</li>
+<li className="list">
+DONOR NUMBER {props.number}
+</li>
+</div>
+<div className="rightcolumn">
+<li className="list">
+DATE OF BIRTH {props.date}
+</li>
+<li className="list">
+BLOOD TYPE {props.bloodType}
+</li>
+</div>
+<div className="middlecolumn1">
+<li className="list">
+ADDRESS {props.address}
+</li>
+</div>
+<div className="middlecolumn2">
+<li className="list">
+TELEPHONE {props.telephone}
+</li>
+</div>
+</ul>
+</div>
+</div>
+</div>
+);
+} else if (choice === UserType.ADMIN) {
+content = (
+<div>
+<Navigation user={UserType.ADMIN} />
+<div className="maincontainer">
+<div className="dashboard">
+<h1 className="firstheading">WELCOME {props.name}!</h1>
+<h2 className="subheading">YOUR DASHBOARD</h2>
+<div className='iconImage'>
+<img src={profilepic} className='adminIcon' />
+</div>
+</div>
+<div className="dashboardinfo">
+<h3 className="finalheading">PERSONAL INFORMATION</h3>
+<ul>
+<li className="list">
+NAME: {props.name}
+</li>
+<hr />
+<div className="table">
+<li className="list">
+Number of pending hospital requests: {props.pendinghospital}
+</li>
+<li className="list">
+Number of pending blood bank requests: {props.pendingbloodbank}
+</li>
+<li className="list">
+Number of accepted hospital requests: {props.acceptedhospital}
+</li>
+<li className="list">
+Number of accepted blood bank requests: {props.acceptedbloodbank}
+</li>
+</div>
+</ul>
+</div>
+</div>
+</div>
+);
+}  else if (choice === UserType.HOSPITAL) {
+  content = (
+  <div>
+  <Navigation user={UserType.HOSPITAL} />
+  <div className="maincontainer">
+  <div className="dashboard">
+  <h1 className="firstheading">WELCOME {props.name}!</h1>
+  <h2 className="subheading">YOUR DASHBOARD</h2>
+  <div className='iconImage'>
+  <img src={profilepic} className='hospitalIcon' />
+  </div>
+  </div>
+  <div className="dashboardinfo">
+  <h3 className="finalheading">PERSONAL INFORMATION</h3>
+  <ul>
+  <li className="list">
+  NAME OF HOSPITAL: {props.name}
+  </li>
+  <li className="list">
+  DISTRICT OF THE HOSPITAL: {props.district}
+  </li>
+  <li className="list">
+  TELEPHONE NUMBER: {props.telephone}
+  </li>
+  <li className="list">
+  ADDRESS: {props.address}
+  </li>
+  </ul>
+  </div>
+  </div>
+  </div>
+);
+}   else if (choice === UserType.BLOODBANK) {
+  content = (
+  <div>
+  <Navigation user={UserType.BLOODBANK} />
+    <div className="maincontainer">
+    <div className="dashboard">
+    <h1 className="firstheading">WELCOME {props.name}!</h1>
+    <h2 className="subheading">YOUR DASHBOARD</h2>
+   <div className='iconImage'>
+    <img src={profilepic} className='bloodBankIcon' />
+    </div>
+    </div>
+    <div className="dashboardinfo">
+    <h3 className="finalheading">PERSONAL INFORMATION</h3>
+    <ul>
+    <li className="list">
+    NAME OF BLOOD BANK: {props.name}
+   </li>
+    <li className="list">
+    DISTRICT OF BLOOD BANK: {props.district}
+    </li>
+    <li className="list">
+  TELEPHONE: {props.telephone}
+    </li>
+    <li className="list">
+  ADDRESS: {props.address}
+    </li>
+    </ul>
+    </div>
+  </div>
+</div>
+);
+}
+
+return (
+<div>
+{content}
+</div>
+);
+}
+
+export default Dashboards
