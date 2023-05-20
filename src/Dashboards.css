@@ -29,7 +29,7 @@
 
 .finalheading{
   margin-bottom:4%;
-  margin-top:6%;
+  margin-top:2%;
   margin-left:28%;
   font-size:18px;
   color:rgb(5, 5, 5);
@@ -44,7 +44,7 @@
 }
 
 .leftcolumn1{
-  margin-top:-7%;
+  margin-top:2%;
   margin-left:30%;
   border-radius: 10px;
   width:20%;
@@ -58,6 +58,18 @@
 .leftcolumn2{
   margin-top:-3%;
   margin-left:65%;
+}
+
+.Logout{
+  border:none;
+  color:rgb(255, 255, 255);
+  font-weight: bold;
+  border-radius:15px;
+  background-color: rgb(255, 98, 0);
+  padding:4px;
+  width:80px;
+  margin-top:2%;
+  margin-left:80%;
   
 }
 
@@ -174,7 +186,7 @@ color: orange;
 .table {
   list-style: none;
   padding: -2px;
-  margin-top: -10%;
+  margin-top: 6%;
 
 }
 .dashboard{

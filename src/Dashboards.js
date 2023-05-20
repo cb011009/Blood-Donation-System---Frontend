@@ -177,7 +177,7 @@ function Dashboards(props) {
    BLOODBANK: 'bloodbank'
 };
 
-const choice = UserType.DONOR;
+const choice = UserType.ADMIN;
 let content = null;
 
 if (choice === UserType.DONOR) {
@@ -185,11 +185,7 @@ content = (
 <div>
 <Navigation user={UserType.DONOR} />
 <div className="maincontainer">
-<hr className="navhr"/>
-<div className="dashboard">
-<div className='iconImage'>
-</div>
-</div>
+<button className="Logout">Logout</button>
 <div className="dashboardinfo">
 <h3 className="finalheading">Personal Information</h3>
 <ul>
@@ -228,20 +224,15 @@ content = (
 <div>
 <Navigation user={UserType.ADMIN} />
 <div className="maincontainer">
-<div className="dashboard">
-<h1 className="firstheading">WELCOME {props.name}!</h1>
-<h2 className="subheading">YOUR DASHBOARD</h2>
-<div className='iconImage'>
-<img src={profilepic} className='adminIcon' />
-</div>
-</div>
+<button className="Logout">Logout</button>
 <div className="dashboardinfo">
 <h3 className="finalheading">PERSONAL INFORMATION</h3>
 <ul>
+<div className="leftcolumn1">
 <li className="list">
-NAME: {props.name}
+ NAME <i className="fas fa-user icon-left1"></i><span className="innertext">hi</span>
 </li>
-<hr />
+</div>
 <div className="table">
 <li className="list">
 Number of pending hospital requests: {props.pendinghospital}
@@ -266,6 +257,7 @@ Number of accepted blood bank requests: {props.acceptedbloodbank}
   <div>
   <Navigation user={UserType.HOSPITAL} />
   <div className="maincontainer">
+  <button className="Logout">Logout</button>
   <div className="dashboard">
   <h1 className="firstheading">WELCOME {props.name}!</h1>
   <h2 className="subheading">YOUR DASHBOARD</h2>
@@ -298,6 +290,7 @@ Number of accepted blood bank requests: {props.acceptedbloodbank}
   <div>
   <Navigation user={UserType.BLOODBANK} />
     <div className="maincontainer">
+    <button className="Logout">Logout</button>
     <div className="dashboard">
     <h1 className="firstheading">WELCOME {props.name}!</h1>
     <h2 className="subheading">YOUR DASHBOARD</h2>

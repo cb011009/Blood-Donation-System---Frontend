@@ -264,6 +264,7 @@ export default Navigation;
 
 
 import profilepic from "./images/common.png";
+
 import React, { useState } from "react";
 import "./Navigation.css";
 
@@ -281,7 +282,6 @@ function Navigation(props) {
     if (props.user === UserTypes.DONOR) {
       return (
         <ul className="sidebarnav">
-          <hr className="navhr"/>
           <h2 className="myac"> MY ACCOUNT </h2>
           <img src={profilepic} className='donorIcon' />
 
@@ -329,21 +329,51 @@ function Navigation(props) {
     if (props.user === UserTypes.ADMIN) {
       return (
         <ul className="sidebarnav">
+          <h2 className="myac"> MY ACCOUNT </h2>
+          <img src={profilepic} className='adminIcon' />
           <li className="lists">
-            <a href="/Dashboards" className="link">ADMIN DASHBOARD</a>
+            <a href="/Dashboards" className="link">
+              <span className="icon admin-dashboard-icon"></span>
+              ADMIN DASHBOARD
+            </a>
           </li>
           <li className="lists">
-            <a href="/Pendingrequests" className="link">PENDING REQUESTS</a>
-            <li className="subnav">HOSPITAL</li>
-            <li className="subnav">BLOOD BANK</li>
-          </li >
-          <li className="lists">
-            <a href="/Acceptedrequests" className="link">ACCEPTED REQUESTS</a>
-            <li className="subnav">HOSPITAL</li>
-            <li className="subnav">BLOOD BANK</li>
+            <a href="/Pendingrequests" className="linkexceptional">
+              <span className="icon hospital-icon"></span>
+              PENDING REQUESTS
+            </a>
+            <ul>
+              <li className="sidelink">
+                <span className="icon hospital-icon"></span>
+                HOSPITAL
+              </li>
+              <li className="sidelink">
+                <span className="icon bloodbank-icon"></span>
+                BLOOD BANK
+              </li>
+            </ul>
           </li>
           <li className="lists">
-            <a href="/SignUp" className="link">LOGOUT</a>
+            <a href="/Acceptedrequests" className="linkexceptional">
+              <span className="icon hospital-icon"></span>
+              ACCEPTED REQUESTS
+            </a>
+            <ul>
+              <li className="sidelink">
+                <span className="icon hospital-icon"></span>
+                HOSPITAL
+              </li>
+              <li className="sidelink">
+                <span className="icon bloodbank-icon"></span>
+                BLOOD BANK
+              </li>
+            </ul>
+          </li>
+          <li className="lists">
+            <a href="/SignUp" className="link">
+              <span className="icon logout-icon"></span>
+              LOGOUT
+            </a>
           </li>
         </ul>
       );
