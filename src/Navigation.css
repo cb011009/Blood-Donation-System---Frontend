@@ -1,14 +1,8 @@
-* {
-  font-family: Arial;
-  text-decoration: none;
-  border-right: none;
-  border-left: none;
-  border: none ;
-  background-color: transparent;
-}
+
+
 .donorIcon,.adminIcon,.hospitalIcon,.bloodBankIcon
 { padding:20px;
-   width: 40%; 
+   width: 35%; 
    height: 20%;
    margin-left: 30%;
    margin-bottom:2%;
@@ -27,6 +21,7 @@
 .bloodBankIcon
     { background-image: linear-gradient(to bottom, #fb5b5b,#e8000c)
     }
+    
 .link{
   padding:0 0px ;
   background-color:none ;
@@ -56,6 +51,7 @@
   background-color: transparent;
   color: rgb(205, 196, 196);
 }
+
 /*
 .navhr{
   color: #8d8d8d;
@@ -85,40 +81,45 @@
   width: 200px;
   transition: transform 0.3s ease;
   transform: translateX(-200px);
-  display: flex; /* Add this line */
-  flex-direction: column; /* Add this line */
+  background-color:whitesmoke;
+  opacity:5;
+  display: flex;
+  flex-direction: column; 
 }
 
 .sidebar-toggle {
-  transition: transform 0.3s ease;
+transition: transform 0.3s ease;
  font-size:xx-large;
- margin-left:1%;
+ margin-left:2%;
  margin-top:1%;
+ background-color: transparent;
+    border: none;
 
 }
 
 .sidebar-toggle:hover{
-  background-color:rgb(192, 186, 186) ;
-  border-radius:10%;
+  color:rgb(56, 55, 55);
 }
 
 .sidebar-toggle.active {
   transform: translateX(200px); 
+
 }
 
 .sidebar {
   position: fixed;
-  top: 0;
+  margin-top:5%;
   left: 0;
   height: 100vh;
   width: 200px;
-  background-color: #fffefe;
   transition: transform 0.3s ease;
   transform: translateX(-200px); 
 }
 
 .sidebar.active {
   transform: translateX(0); 
+  opacity:15;
+  width:220px;
 }
 
 .myac{

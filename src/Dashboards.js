@@ -168,6 +168,7 @@ import "./Dashboards.css";
 import Navigation from "./Navigation";
 import profilepic from "./images/common.png";
 
+
 function Dashboards(props) {
  const UserType = {
    DONOR: 'donor',
@@ -184,6 +185,7 @@ content = (
 <div>
 <Navigation user={UserType.DONOR} />
 <div className="maincontainer">
+<hr className="navhr"/>
 <div className="dashboard">
 <div className='iconImage'>
 </div>
@@ -191,31 +193,29 @@ content = (
 <div className="dashboardinfo">
 <h3 className="finalheading">Personal Information</h3>
 <ul>
-<hr className="hrtag"/>
-<div className="leftcolumn">
+<div className="leftcolumn1">
 <li className="list">
-NAME <span>{props.name}</span>
-</li>
-<li className="list">
-DONOR NUMBER {props.number}
+ NAME <i className="fas fa-user icon-left1"></i><span className="innertext">hi</span>
 </li>
 </div>
-<div className="rightcolumn">
+<div className="rightcolumn1">
 <li className="list">
-DATE OF BIRTH {props.date}
+ DATE OF BIRTH <i className="fas fa-calendar-alt icon-left2"></i><span className="innertext">hi</span>
 </li>
+</div>
+<div className="rightcolumn2">
 <li className="list">
-BLOOD TYPE {props.bloodType}
+ BLOOD TYPE<i className="fas fa-tint icon-left3"></i><span className="innertext">hi</span>
 </li>
 </div>
 <div className="middlecolumn1">
 <li className="list">
-ADDRESS {props.address}
+ TELEPHONE <i className="fas fa-phone icon-left4"></i> <span className="innertext">hi</span>
 </li>
 </div>
 <div className="middlecolumn2">
 <li className="list">
-TELEPHONE {props.telephone}
+ ADDRESS <i className="fas fa-map-marker-alt icon-left5"></i><span className="innertext">hi</span>
 </li>
 </div>
 </ul>

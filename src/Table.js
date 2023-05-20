@@ -1,4 +1,5 @@
-/*import React from 'react';
+/*
+import React from 'react';
 import './Table.css';
 
 function Table({ tableName, numRows }) {
@@ -7,7 +8,7 @@ function Table({ tableName, numRows }) {
       columns: ["NIC", "DATE OF DONATION", "BLOOD TYPE", "QUANTITY OF BLOOD DONATED IN PINTS"],
     },
     "DONOR SEARCH": {
-      columns: ["NIC OF DONOR","NAME OF DONOR", "TELEPHONE DETAILS", "ENTER BLOOD TYPE", "ENTER LOCATION OF BLOOD BANK", "ENTER AMOUNT OF BLOOD DONATED [IN PINTS]", "REWARD POINTS", "ENTER COMMENTS ABOUT THE DONOR"],
+      columns: ["NIC OF DONOR","NAME OF DONOR", "TELEPHONE DETAILS", "ENTER BLOOD TYPE", "ENTER LOCATION OF BLOOD BANK", "ENTER AMOUNT OF BLOOD DONATED [IN PINTS]", "REWARD POINTS", "CONFIRM CHANGES"],
     },
     "BLOOD BANK SEARCH": {
       columns: ["DATE","BLOOD BANK NAME", "BLOOD TYPE", "AMOUNT OF BLOOD"],
@@ -95,7 +96,6 @@ function generateRows(tableName) {
         const locationInput = <input type="text" />;
         const amountInput = <input type="number" min="0"/>;
         const reward = <input type="number"  min="0" />;
-        const commentsInput = <textarea />;
           
         for (let i = 0; i < numberofRows; i++) {
           const row = {
@@ -114,7 +114,9 @@ function generateRows(tableName) {
             "ENTER LOCATION OF BLOOD BANK": locationInput,
             "ENTER AMOUNT OF BLOOD DONATED [IN PINTS]": amountInput,
             "REWARD POINTS": reward,
-            "ENTER COMMENTS ABOUT THE DONOR": commentsInput,
+            "ACTION": (
+              <button>Confirm Changes</button>
+            ),
           }; 
           rows.push(row);
         }
@@ -153,7 +155,6 @@ export default Table;
 import React from 'react';
 import './Table.css';
 
-
 const TableNames = {
   DONORHISTORY: "DONOR HISTORY",
   DONORSEARCH: "DONOR SEARCH",
@@ -166,10 +167,10 @@ function Table({ tableName, numRows }) {
       columns: ["NIC", "DATE OF DONATION", "BLOOD TYPE", "QUANTITY OF BLOOD DONATED IN PINTS"],
     },
     [TableNames.DONORSEARCH]: {
-      columns: ["NIC OF DONOR","NAME OF DONOR", "TELEPHONE DETAILS", "ENTER BLOOD TYPE", "ENTER LOCATION OF BLOOD BANK", "ENTER AMOUNT OF BLOOD DONATED [IN PINTS]", "REWARD POINTS", "ENTER COMMENTS ABOUT THE DONOR"],
+      columns: ["NIC OF DONOR", "NAME OF DONOR", "TELEPHONE DETAILS", "ENTER BLOOD TYPE", "ENTER LOCATION OF BLOOD BANK", "ENTER AMOUNT OF BLOOD DONATED [IN PINTS]", "REWARD POINTS", "ACTION"],
     },
     [TableNames.BLOODBANKSEARCH]: {
-      columns: ["DATE","BLOOD BANK NAME", "BLOOD TYPE", "AMOUNT OF BLOOD"],
+      columns: ["DATE", "BLOOD BANK NAME", "BLOOD TYPE", "AMOUNT OF BLOOD"],
     },
   };
 
@@ -181,6 +182,11 @@ function Table({ tableName, numRows }) {
 
   const { columns } = tableData;
   const rows = generateRows(tableName, numRows);
+
+  const handleRowClick = (index) => {
+    // Placeholder implementation
+    console.log("Row clicked:", index);
+  };
 
   return (
     <div>
@@ -246,7 +252,6 @@ function generateRows(tableName) {
     const locationInput = <input type="text" />;
     const amountInput = <input type="number" min="0" />;
     const reward = <input type="number" min="0" />;
-    const commentsInput = <textarea />;
 
     for (let i = 0; i < numberofRows; i++) {
       const row = {
@@ -265,7 +270,9 @@ function generateRows(tableName) {
         "ENTER LOCATION OF BLOOD BANK": locationInput,
         "ENTER AMOUNT OF BLOOD DONATED [IN PINTS]": amountInput,
         "REWARD POINTS": reward,
-        "ENTER COMMENTS ABOUT THE DONOR": commentsInput,
+        "ACTION": (
+          <button>Confirm Changes</button>
+        ),
       };
       rows.push(row);
     }
