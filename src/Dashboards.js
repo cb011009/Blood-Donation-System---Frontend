@@ -177,7 +177,7 @@ function Dashboards(props) {
    BLOODBANK: 'bloodbank'
 };
 
-const choice = UserType.ADMIN;
+const choice = UserType.DONOR;
 let content = null;
 
 if (choice === UserType.DONOR) {

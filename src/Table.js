@@ -159,12 +159,16 @@ const TableNames = {
   DONORHISTORY: "DONOR HISTORY",
   DONORSEARCH: "DONOR SEARCH",
   BLOODBANKSEARCH: "BLOOD BANK SEARCH",
+  DONORLOCATION:"DONOR LOCATION",
 };
 
 function Table({ tableName, numRows }) {
   const tables = {
     [TableNames.DONORHISTORY]: {
       columns: ["NIC", "DATE OF DONATION", "BLOOD TYPE", "QUANTITY OF BLOOD DONATED IN PINTS"],
+    },
+    [TableNames.DONORLOCATION]:{
+      columns: ["NAME OF BLOOD BANK","CONTACT DETAILS","ADDRESS"],
     },
     [TableNames.DONORSEARCH]: {
       columns: ["NIC OF DONOR", "NAME OF DONOR", "TELEPHONE DETAILS", "ENTER BLOOD TYPE", "ENTER LOCATION OF BLOOD BANK", "ENTER AMOUNT OF BLOOD DONATED [IN PINTS]", "REWARD POINTS", "ACTION"],
@@ -183,10 +187,7 @@ function Table({ tableName, numRows }) {
   const { columns } = tableData;
   const rows = generateRows(tableName, numRows);
 
-  const handleRowClick = (index) => {
-    // Placeholder implementation
-    console.log("Row clicked:", index);
-  };
+
 
   return (
     <div>
@@ -243,6 +244,19 @@ function generateRows(tableName) {
       };
       rows.push(row);
     }
+  } else if (tableName === TableNames.DONORLOCATION) {
+      const namebloodbank = [ "Narahempital Bloodbank"];
+      const contact= ["0999999", "822222"];
+      const address = ["a"];
+      const numRows = 20;
+      for (let i = 0; i < numRows; i++) {
+        const row = {
+          "NAME OF BLOOD BANK": namebloodbank[i],
+          "CONTACT DETAILS":contact[i],
+          "ADDRESS": address[i],
+        };
+        rows.push(row);
+      }
   } else if (tableName === TableNames.DONORSEARCH) {
     const nameD = ["monaragala", "moratuwa"];
     const telephone = ["11"];
@@ -295,5 +309,6 @@ function generateRows(tableName) {
 
   return rows;
 }
+
 
 export default Table;

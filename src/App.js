@@ -25,6 +25,7 @@ function App() {
       </Route>
       <Route path='/Location2'>
         <Navigation user="donor"/>
+        <Table tableName="DONOR LOCATION"/>
         <Location2/>
       </Route>
       <Route path='/Donorpoints'>

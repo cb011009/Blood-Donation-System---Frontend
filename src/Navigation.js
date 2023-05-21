@@ -333,45 +333,45 @@ function Navigation(props) {
           <img src={profilepic} className='adminIcon' />
           <li className="lists">
             <a href="/Dashboards" className="link">
-              <span className="icon admin-dashboard-icon"></span>
+            <i className="fas fa-chart-bar"></i> 
               ADMIN DASHBOARD
             </a>
           </li>
           <li className="lists">
             <a href="/Pendingrequests" className="linkexceptional">
-              <span className="icon hospital-icon"></span>
+            <i className="fas fa-clock"></i> 
               PENDING REQUESTS
             </a>
             <ul>
               <li className="sidelink">
-                <span className="icon hospital-icon"></span>
+              <i className="fas fa-hospital"></i>
                 HOSPITAL
               </li>
               <li className="sidelink">
-                <span className="icon bloodbank-icon"></span>
+              <i className="fas fa-medkit"></i>
                 BLOOD BANK
               </li>
             </ul>
           </li>
           <li className="lists">
             <a href="/Acceptedrequests" className="linkexceptional">
-              <span className="icon hospital-icon"></span>
+            <i className="fas fa-check-circle"></i> 
               ACCEPTED REQUESTS
             </a>
             <ul>
               <li className="sidelink">
-                <span className="icon hospital-icon"></span>
+              <i className="fas fa-hospital"></i>
                 HOSPITAL
               </li>
               <li className="sidelink">
-                <span className="icon bloodbank-icon"></span>
+              <i className="fas fa-medkit"></i>
                 BLOOD BANK
               </li>
             </ul>
           </li>
           <li className="lists">
             <a href="/SignUp" className="link">
-              <span className="icon logout-icon"></span>
+            <i className="fas fa-sign-out-alt"></i>
               LOGOUT
             </a>
           </li>
