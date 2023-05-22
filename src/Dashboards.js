@@ -177,7 +177,7 @@ function Dashboards(props) {
    BLOODBANK: 'bloodbank'
 };
 
-const choice = UserType.DONOR;
+const choice = UserType.BLOODBANK;
 let content = null;
 
 if (choice === UserType.DONOR) {
@@ -185,7 +185,7 @@ content = (
 <div>
 <Navigation user={UserType.DONOR} />
 <div className="maincontainer">
-<button className="Logout">Logout</button>
+<button className="Logoutdonor">Logout</button>
 <div className="dashboardinfo">
 <h3 className="finalheading">Personal Information</h3>
 <ul>
@@ -224,31 +224,37 @@ content = (
 <div>
 <Navigation user={UserType.ADMIN} />
 <div className="maincontainer">
-<button className="Logout">Logout</button>
+<button className="Logoutadmin">Logout</button>
 <div className="dashboardinfo">
 <h3 className="finalheading">PERSONAL INFORMATION</h3>
 <ul>
 <div className="leftcolumn1">
 <li className="list">
- NAME <i className="fas fa-user icon-left1"></i><span className="innertext">hi</span>
+ NAME <i className="fas fa-user icon-left6"></i><span className="innertext">hi</span>
 </li>
 </div>
-<div className="table">
-<li className="list">
-Number of pending hospital requests: {props.pendinghospital}
+
+<div className="admincolumn">
+<li className="requestlist">
+<span className="number">09</span><br/><i className="fas fa-bolt icon-left7"/>Number of pending hospital requests
 </li>
-<li className="list">
-Number of pending blood bank requests: {props.pendingbloodbank}
+<hr/>
+<li className="requestlist">
+<span className="number">90</span><br/><i className="fas fa-bolt icon-left7"/>Number of pending blood bank requests 
 </li>
-<li className="list">
-Number of accepted hospital requests: {props.acceptedhospital}
+<hr/>
+<li className="requestlist" >
+<span className="number">80</span><br/><i className="fas fa-bolt icon-left7"/>Number of accepted hospital requests 
 </li>
-<li className="list">
-Number of accepted blood bank requests: {props.acceptedbloodbank}
+<hr/>
+<li className="requestlist">
+<span className="number">78</span><br/><i className="fas fa-bolt icon-left7"/>Number of accepted blood bank requests 
 </li>
 </div>
+
 </ul>
 </div>
+
 </div>
 </div>
 );
@@ -256,30 +262,31 @@ Number of accepted blood bank requests: {props.acceptedbloodbank}
   content = (
   <div>
   <Navigation user={UserType.HOSPITAL} />
-  <div className="maincontainer">
-  <button className="Logout">Logout</button>
-  <div className="dashboard">
-  <h1 className="firstheading">WELCOME {props.name}!</h1>
-  <h2 className="subheading">YOUR DASHBOARD</h2>
-  <div className='iconImage'>
-  <img src={profilepic} className='hospitalIcon' />
-  </div>
-  </div>
-  <div className="dashboardinfo">
-  <h3 className="finalheading">PERSONAL INFORMATION</h3>
+<div className="maincontainer">
+<button className="Logouthospital">Logout</button>
+<div className="dashboardinfo">
+<h3 className="finalheading">PERSONAL INFORMATION</h3>
   <ul>
-  <li className="list">
-  NAME OF HOSPITAL: {props.name}
+  <div className="leftcolumn1">
+<li className="list">
+  NAME OF HOSPITAL <i className="fa fa-hospital icon-left8"></i><span className="innertext">hi</span>
   </li>
+  </div>
+  <div className="leftcolumn2">
   <li className="list">
-  DISTRICT OF THE HOSPITAL: {props.district}
+ ADDRESS <i className="fas fa-map-marker-alt icon-left9"></i><span className="innertext">hi</span>
   </li>
+  </div>
+  <div className="rightcolumn1">
   <li className="list">
-  TELEPHONE NUMBER: {props.telephone}
+  TELEPHONE NUMBER <i className="fas fa-phone icon-left10"></i> <span className="innertext">hi</span>
   </li>
+  </div>
+  <div className="rightcolumn2">
   <li className="list">
-  ADDRESS: {props.address}
+  DISTRICT OF THE HOSPITAL <i className="fa fa-location-arrow icon-left11"></i> <span className="innertext">hi</span>
   </li>
+  </div>
   </ul>
   </div>
   </div>
@@ -289,30 +296,31 @@ Number of accepted blood bank requests: {props.acceptedbloodbank}
   content = (
   <div>
   <Navigation user={UserType.BLOODBANK} />
-    <div className="maincontainer">
-    <button className="Logout">Logout</button>
-    <div className="dashboard">
-    <h1 className="firstheading">WELCOME {props.name}!</h1>
-    <h2 className="subheading">YOUR DASHBOARD</h2>
-   <div className='iconImage'>
-    <img src={profilepic} className='bloodBankIcon' />
-    </div>
-    </div>
-    <div className="dashboardinfo">
-    <h3 className="finalheading">PERSONAL INFORMATION</h3>
+  <div className="maincontainer">
+<button className="Logoutbloodbank">Logout</button>
+<div className="dashboardinfo">
+<h3 className="finalheading">PERSONAL INFORMATION</h3>
     <ul>
+    <div className="leftcolumn1">
     <li className="list">
-    NAME OF BLOOD BANK: {props.name}
+    NAME OF BLOOD BANK<i className="fas fa-hospital icon-left12"></i><span className="innertext">hi</span>
    </li>
+   </div>
+   <div className="leftcolumn2">
     <li className="list">
-    DISTRICT OF BLOOD BANK: {props.district}
+    DISTRICT OF BLOOD BANK<i className="fas fa-location-arrow icon-left13"></i><span className="innertext">hi</span>
     </li>
+    </div>
+    <div className="rightcolumn1">
     <li className="list">
-  TELEPHONE: {props.telephone}
+  TELEPHONE<i className="fas fa-phone icon-left14"></i><span className="innertext">hi</span>
     </li>
+    </div>
+    <div className="rightcolumn2">
     <li className="list">
-  ADDRESS: {props.address}
+  ADDRESS<i className="fas fa-map-marker-alt icon-left15"></i><span className="innertext">hi</span>
     </li>
+    </div>
     </ul>
     </div>
   </div>

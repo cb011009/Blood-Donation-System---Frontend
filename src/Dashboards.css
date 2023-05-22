@@ -55,12 +55,35 @@
   border: 1px solid rgb(224, 221, 221);
 }
 
-.leftcolumn2{
-  margin-top:-3%;
-  margin-left:65%;
+.admincolumn{
+
+    margin-top:-8%;
+    margin-left:60%;
+    border-radius: 10px;
+    width:20%;
+    font-weight: bold;
+    height:auto;
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    border: 1px solid rgb(224, 221, 221);
+  
+  
 }
 
-.Logout{
+
+.leftcolumn2{
+  margin-top:-8%;
+  margin-left:55%;
+  border-radius: 10px;
+  width:20%;
+  font-weight: bold;
+  height:100px;
+  background-color: rgb(255, 255, 255);
+  padding: 30px;
+  border: 1px solid rgb(224, 221, 221);
+}
+
+.Logoutdonor{
   border:none;
   color:rgb(255, 255, 255);
   font-weight: bold;
@@ -72,6 +95,49 @@
   margin-left:80%;
   
 }
+
+
+
+.Logoutadmin{
+  border:none;
+  color:rgb(255, 255, 255);
+  font-weight: bold;
+  border-radius:15px;
+  background-color: rgb(88, 86, 85);
+  padding:4px;
+  width:80px;
+  margin-top:2%;
+  margin-left:80%;
+  
+}
+
+.Logoutbloodbank{
+  border:none;
+  color:rgb(255, 255, 255);
+  font-weight: bold;
+  border-radius:15px;
+  background-color: rgb(240, 3, 3);
+  padding:4px;
+  width:80px;
+  margin-top:2%;
+  margin-left:80%;
+  
+}
+
+
+.Logouthospital{
+  border:none;
+  color:rgb(255, 255, 255);
+  font-weight: bold;
+  border-radius:15px;
+  background-color: rgb(59, 186, 186);
+  padding:4px;
+  width:80px;
+  margin-top:2%;
+  margin-left:80%;
+  
+}
+
 
 .rightcolumn1{
   margin-top:4%;
@@ -85,10 +151,19 @@
   border: 1px solid rgb(224, 221, 221);
 }
 
+.requestlist{
+  list-style-type: none;
+  color:rgb(0, 0, 0);
+  padding:0px;
+  border: none;
+  margin:2%;
+  font-size:13px;
+}
+
 
 
 .rightcolumn2{
-  margin-top:-19.5%;
+  margin-top:-8%;
   margin-left:55%;
   width:20%;
   font-weight: bold;
@@ -164,6 +239,63 @@ color: orange;
   color: orange;
 }
 
+.icon-left6{
+  margin-left: 125px; 
+  color: rgb(67, 67, 67);
+}
+
+
+.icon-left7{
+  padding: 5px; 
+  color: rgb(144, 144, 144);
+}
+
+.icon-left8{
+  margin-left: 45px;
+  color: rgb(0, 186, 174);
+}
+
+.icon-left9{
+  margin-left: 105px;
+  color: rgb(0, 186, 174);
+}
+
+.icon-left10{
+  margin-left: 35px; 
+  color: rgb(0, 186, 174);
+}
+
+.icon-left11{
+  margin-left: -2.9px;
+  color:rgb(0, 186, 174);
+}
+
+.icon-left12{
+  margin-left: 26px;
+  color:rgb(186, 12, 0);
+}
+
+.icon-left13{
+  margin-left: 8px;
+  color:rgb(186, 12, 0);
+}
+
+.icon-left14{
+  margin-left: 99px;
+  color:rgb(186, 12, 0);
+}
+
+.icon-left15{
+  margin-left: 117px;
+  color:rgb(186, 12, 0);
+}
+
+.number{
+  font-size:xx-large;
+  color:grey;
+}
+
+
 .hrtag{
   width:70%;
   margin-left:20%;
@@ -183,23 +315,10 @@ color: orange;
   box-shadow: 0 0 10px rgba(43, 43, 43, 0.7);
   z-index: 1;
 }*/
-.table {
-  list-style: none;
-  padding: -2px;
-  margin-top: 6%;
 
-}
 .dashboard{
   font-size:12px ;
 
-}
-.table li {
-  color: rgb(1, 1, 1);
-  border-radius:22px;
-  border: 2px solid rgb(57, 56, 56);
-  padding:8px;
-  margin-bottom: 5px;
-  font-size:12px;
 }
 
 hr{
@@ -207,7 +326,9 @@ hr{
 
 }
 
-
+body{
+  background-color: whitesmoke;
+}
 
 
     
