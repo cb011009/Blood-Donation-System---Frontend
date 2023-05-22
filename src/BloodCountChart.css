@@ -1,18 +1,6 @@
 
-.key {
-    border: 1px solid black;
-    display: flex;
-    border-radius:25px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 1px;
-    margin-bottom: 2px;
-    width:20%;
-    margin-left:85%;
-    margin-top:-55%;
-  }
-  .borderbox{
+
+  /*.borderbox{
     border-collapse: collapse;
     margin-bottom: 20px;
     border-radius: 25px;
@@ -22,47 +10,77 @@
     padding:5%;
     border:3px solid #000000;
     background-color: whitesmoke;
-  }
+  }*/
   .circle {  
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;   
   }
   
   .green {
     background-color: green;
-    margin-top:-22%;
-    margin-left:-25%;
+    margin-top:-35%;
+    margin-left:35%;
   }
   
   .red {
     background-color: red;
-    margin-top:2%;
-    margin-left:-38%;
+    margin-top:-2.6%;
+    margin-left:45%;
     
   }
+
+  .Barchart {
+    float: left;
+  }
   
-  .info {
-    margin-top: -23%;
+  .blood-counts {
+    float: left;
+    margin-left: 20px;
   }
-  .two{
-    margin-left:-17%;
+  
+  .bloodcount {
+    margin-bottom: 10px;
   }
-  .one{
-    margin-left:-4%;
-    margin-top:-20%;
+  
+  .bloodtype {
+    margin-right: 5px;
+  }
+  
+  .bloodlabels {
+    width: 100px;
+  }
+  
+  .infotwo{
+    margin-left:47%;
+    margin-top:-1.4%;
+    color:gray;
+    font-size: smaller;
+
+  }
+  .infoone{
+    margin-left:37%;
+    margin-top:-1.4%;
+    color:gray;
+    font-size: smaller;
   }
   .Barchart{
-    margin-left:10%;
-    margin-top:-2%;
+    margin-left:15%;
+    margin-top:-1%;
+    
   }
+
+.bar{
+  width:20%;
+}
+ 
 
   .IncrementDecrementButtons {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin-top:40%;
+    margin-top:25%;
     margin-bottom:5%;
   }
   
@@ -93,21 +111,19 @@
 }
 .Bloodtypetext{
   color:grey;
-  margin-top:1%;
+  margin-top:-1%;
+  font-size: smaller;
+  margin-left:37%;
 }
 .frequencytext{
   color:grey;
+  font-size: smaller;
+  margin-left:18%;
+  margin-top:7%;
+  width:10%;
 }
 
-input[type="number"]{
- color: rgb(1, 1, 1);
-  border-radius:22px;
-  border: 2px solid rgb(0, 0, 0);
-  padding:8px;
-  margin-bottom: 5px;
-  font-size:12px;
-  width:160px;
-}
+
 .submit {
   color: rgb(255, 255, 255);
   border-radius:22px;
@@ -115,8 +131,8 @@ input[type="number"]{
   padding:8px;
   background-color: black;
   font-size:15px;
-  margin-left: 80%;
- margin-top:-5%;
+  margin-left: -140%;
+ margin-top:5%;
 
 }
 .submit:hover {

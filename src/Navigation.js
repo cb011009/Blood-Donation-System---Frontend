@@ -288,7 +288,7 @@ function Navigation(props) {
           <li className="lists">
             <a href="/Dashboards" 
              DONOR DASHBOARD className="link">
-              <i className="fas fa-chart-bar"></i> 
+              <i className="fas fa-info-circle"></i> 
               Donor Dashboard 
             </a>
           </li>
@@ -333,37 +333,37 @@ function Navigation(props) {
           <img src={profilepic} className='adminIcon' />
           <li className="lists">
             <a href="/Dashboards" className="link">
-            <i className="fas fa-chart-bar"></i> 
+            <i className="fas fa-info-circle"></i> 
               ADMIN DASHBOARD
             </a>
           </li>
           <li className="lists">
-            <a href="/Pendingrequests" className="linkexceptional">
+            <a href="/Pendingrequests" className="sidelink">
             <i className="fas fa-clock"></i> 
               PENDING REQUESTS
             </a>
             <ul>
-              <li className="sidelink">
+              <li className="link">
               <i className="fas fa-hospital"></i>
                 HOSPITAL
               </li>
-              <li className="sidelink">
+              <li className="link">
               <i className="fas fa-medkit"></i>
                 BLOOD BANK
               </li>
             </ul>
           </li>
           <li className="lists">
-            <a href="/Acceptedrequests" className="linkexceptional">
+            <a href="/Acceptedrequests" className="link">
             <i className="fas fa-check-circle"></i> 
               ACCEPTED REQUESTS
             </a>
             <ul>
-              <li className="sidelink">
+              <li className="link">
               <i className="fas fa-hospital"></i>
                 HOSPITAL
               </li>
-              <li className="sidelink">
+              <li className="link">
               <i className="fas fa-medkit"></i>
                 BLOOD BANK
               </li>
@@ -382,17 +382,19 @@ function Navigation(props) {
     if (props.user === UserTypes.HOSPITAL) {
       return (
         <ul className="sidebarnav">
+          <h2 className="myac"> MY ACCOUNT </h2>
+          <img src={profilepic} className='hospitalIcon' />
           <li className="lists">
-            <a href="/Dashboards" className="link">HOSPITAL DASHBOARD</a>
+            <a href="/Dashboards" className="link"><i className="fas fa-info-circle"></i> HOSPITAL DASHBOARD</a>
           </li>
           <li className="lists">
-            <a href="/HospitalChart" className="link">BLOOD COUNT</a>
+            <a href="/HospitalChart" className="link"><i className="fas fa-chart-bar"></i>BLOOD COUNT</a>
           </li>
           <li className="lists">
-            <a href="/BloodBankSearch" className="link">BLOOD BANK SEARCH</a>
+            <a href="/BloodBankSearch" className="link"><i className="fa fa-search"></i>BLOOD BANK SEARCH</a>
           </li>
           <li className="lists">
-            <a href="/SignUp" className="link">LOGOUT</a>
+            <a href="/SignUp" className="link"><i className="fas fa-sign-out-alt"></i>LOGOUT</a>
           </li>
         </ul>
       );
@@ -401,17 +403,19 @@ function Navigation(props) {
     if (props.user === UserTypes.BLOODBANK) {
       return (
         <ul className="sidebarnav">
+          <h2 className="myac"> MY ACCOUNT </h2>
+          <img src={profilepic} className='bloodBankIcon' />
           <li className="lists">
-            <a href="/Dashboards" className="link">DASHBOARD</a>
+            <a href="/Dashboards" className="link"><i className="fas fa-info-circle"></i>DASHBOARD</a>
           </li>
           <li className="lists">
-            <a href="/BloodBankChart" className="link">BLOOD CHART</a>
+            <a href="/BloodBankChart" className="link"><i className="fas fa-chart-bar"></i>BLOOD CHART</a>
           </li>
           <li className="lists">
-            <a href="/Donorsearch" className="link">DONOR BASE</a>
+            <a href="/Donorsearch" className="link"> <i className="fas fa-users"></i> DONOR BASE</a>
           </li>
           <li className="lists">
-            <a href="/SignUp" className="link">LOGOUT</a>
+            <a href="/SignUp" className="link"><i className="fas fa-sign-out-alt"></i>LOGOUT</a>
           </li>
         </ul>
       );

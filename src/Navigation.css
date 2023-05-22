@@ -22,7 +22,16 @@
     { background-image: linear-gradient(to bottom, #fb5b5b,#e8000c)
     }
     
-.link,.linkexceptional{
+.hospitalIcon{
+  width: 35%; 
+  height: 25%;
+}
+.bloodBankIcon{
+  width:35%;
+  height:25%;
+}
+
+.link,.sidelink{
   padding:0 0px ;
   background-color:none ;
   font:12px;
@@ -33,17 +42,11 @@
   align-items: center;
   padding-left: 5px; 
   font-size: 12px;
+  
 }
 
-.sidelink{
-  text-decoration: none ;
-  display: flex;
-  align-items: center;
-  margin-left:12px;
-  font-size: 12px;
-}
 
-.link i {
+.link i,.sidelink i {
   margin-right: 18px; /* Adjust the value as needed */
 }
 .lists {
@@ -53,7 +56,7 @@
   padding: 8px;
 }
 
-.link:hover,.sidelink:hover {
+.link:hover{
   text-decoration: none ;
   background-color: transparent;
   color: rgb(205, 196, 196);

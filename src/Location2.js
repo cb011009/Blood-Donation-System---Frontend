@@ -19,7 +19,7 @@ function Location2(props) {
     </div>
   </div>
   
-      <div className="containerlocation2">
+     
         <h1 className="heading01">THE LOCATION YOU HAVE SELECTED IS </h1><p className="districtprops">{props.disrtict} </p>
         <br/>
         <h3 className="heading02">THESE ARE THE BLOOD BANKS AVAILABLE: </h3>
@@ -28,7 +28,7 @@ function Location2(props) {
           <button className="backbutton">BACK</button>
           </a>
         </div>
-      </div>
+
      
     );
   }
