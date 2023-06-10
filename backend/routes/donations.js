@@ -3,18 +3,18 @@ let donation = require("../models/donation");
 
 router.route("/add").post((req,res)=>{
     const name = req.body.name;
-    const bloodtype = req.body.bloodtype;
+    const typeValue = req.body.typeValue;
     const location = req.body.location;
-    const date = req.body.date;
-    const quantity = req.body.quantity;
+    const dateValue = req.body.dateValue;
+    const pintsValue = req.body.pintsValue;
 
     const newdonation = new donation({
-        name,
-        bloodtype,
-        date,
-        location,
-        quantity
-    })
+      name,
+      typeValue,
+      dateValue,
+      location,
+      pintsValue,
+    });
     newdonation.save().then(()=>{
         res.json("donation added")
     }).catch((err)=>{
