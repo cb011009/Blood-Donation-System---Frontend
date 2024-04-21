@@ -1,11 +1,14 @@
-import React, {  useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import Navigation from "./Navigation";
 import Dropdown from "./Dropdown";
 import './LoginAndSignUp.css';
-import { DropDown , FormNames ,InputType ,InputFieldName, UserTypes } from "./utils/Enums";
+import { DropDown , FormNames ,InputType ,InputFieldName } from "./utils/Enums";
 import { validateForm, validateField } from './Validation';
+import { Backend_URL } from "./App";
+import { UserTypes } from "./utils/Enums";
+/*import { useCookies } from "react-cookie";*/
 
 export const NICField =  { name: InputFieldName.NIC,  type: InputType.TEXT, label: "NIC",  placeholder: "Enter NIC"};
 export const fullNameField = { name: InputFieldName.FULLNAME, type: InputType.TEXT, label: "Full Name", placeholder: "Enter Full Name" };
@@ -22,12 +25,51 @@ export const districtField = { name: InputFieldName.DISTRICT, type: InputType.DR
 export const passwordField = { name: InputFieldName.PASSWORD, type: InputType.PASSWORD, label: "Password", placeholder: "Enter Password" };
 export const loginPasswordField = { name: InputFieldName.LOGINPASSWORD, type: InputType.PASSWORD, label: "Password", placeholder: "Enter Password" };
 
-export default function Test(props) {
+
+export default function LoginAndSignUp(props) {
+  const choice = props.user;
+
   const history = useHistory();
+  /*const [cookies, removeCookie] = useCookies([]);
+  const [User, setUser] = useState({});*/
+  let route = "";
+  let TypeofUser = "";
+
+  /*useEffect(() => {
+    if (choice === UserTypes.DONOR) {
+      route = "donorDashboard";
+      TypeofUser = "Donor";
+    } else if (choice === UserTypes.ADMIN) {
+      route = "adminDashboard";
+      TypeofUser = "admin";
+    } else if (choice === UserTypes.HOSPITAL) {
+      route = "hospitalDashboard";
+      TypeofUser = "hospital";
+    } else if (choice === UserTypes.BLOODBANK) {
+      route = "bloodBankDashboard";
+      TypeofUser = "bloodBank";
+    }
+    const verifyCookie = async () => {
+      if (!cookies.token) {
+        return;
+      }
+      axios.defaults.withCredentials = true;
+      const url = `${Backend_URL}/${TypeofUser}/verify`;
+      const { data } = await axios.post(url, {}, { withCredentials: true });
+      const { status, user } = data;
+      setUser(user);
+      if (status) {
+        history.push(`/${route}`)
+        return;
+      } else {
+        removeCookie("token");
+       return;
+      }
+    };
+    verifyCookie();
+  }, [cookies, history, removeCookie]);*/
 
   let BloodType='';
-
-
   
    function generateForm(formName, required, field) {
     if (formName === FormNames.BLOODBANK_SIGNUP || formName === FormNames.HOSPITAL_SIGNUP) {
@@ -79,7 +121,8 @@ export default function Test(props) {
       [fieldName]: value,
     };
     setFormValues(newFormValues);
-   
+
+    
     const error = validateField(fieldName, value);
     setErrors((prevErrors) => ({
       ...prevErrors,
@@ -88,37 +131,21 @@ export default function Test(props) {
   };
 
   const formSubmitted = async (formValues, formName) => {
-    
     if (formName === FormNames.DONOR_SIGNUP) {
       console.log("Donor Signup form submitted");
-        
-         for (const key in formValues) {
-         if (key === bloodTypeField.name) {
-             BloodType = formValues[key];
-          }
-        }
-
-        console.log(formValues[InputFieldName.NIC]);
-        console.log(formValues[InputFieldName.FULLNAME]);
-        console.log(formValues[InputFieldName.BIRTHDATE]);
-        console.log( BloodType);
-        console.log(formValues[InputFieldName.PASSWORD]);
-        console.log(formValues[InputFieldName.TELEPHONE]); 
-      /*const dobString = BirthDate.toString().slice(0, 10);
+      const dobString = formValues[InputFieldName.BIRTHDATE].toString().slice(0, 10);
 
       const newDonor = {
         NIC: formValues[InputFieldName.NIC],
-        password:formValues[InputFieldName.PASSWORD] ,
-        gender: Gender,
+        password: formValues[InputFieldName.PASSWORD],
         dob: dobString,
         name: formValues[InputFieldName.FULLNAME],
-        bloodtype:formValues[InputFieldName.BLOODTYPE],
+        bloodtype: formValues[InputFieldName.BLOODTYPE],
         telephone: Number(formValues[InputFieldName.TELEPHONE]),
-        address: Address,
       };
-      try {
+     /* try {
         const { data } = await axios.post(
-          "http://localhost:8070/Donor/add",
+          `${Backend_URL}/Donor/add`,
           newDonor,
           {
             withCredentials: true,
@@ -139,17 +166,17 @@ export default function Test(props) {
       return;*/
     } else if (formName === FormNames.DONOR_LOGIN) {
       console.log("Donor Login form submitted");
-        console.log(formValues[InputFieldName.NIC]);
-        console.log(formValues[InputFieldName.LOGINPASSWORD]);
-        
+      // console.log(formValues[InputFieldName.NIC]);
+      // console.log(formValues[InputFieldName.LOGINPASSWORD]);
+
       /*const donor = {
-        NIC: NIC,
-        password: Password,
+        NIC: formValues[InputFieldName.NIC],
+        password: formValues[InputFieldName.LOGINPASSWORD],
       };
 
       try {
         const { data } = await axios.post(
-          "http://localhost:8070/Donor/login",
+          `${Backend_URL}/Donor/login`,
           donor,
           {
             withCredentials: true,
@@ -170,16 +197,14 @@ export default function Test(props) {
       return;*/
     } else if (formName === FormNames.ADMIN_SIGNUP) {
       console.log("Admin Signup form submitted");
-      console.log(formValues[InputFieldName.USERNAME]);
-      console.log(formValues[InputFieldName.PASSWORD]);
-      /*const newadmin = {
-        username: UserName,
-        password: Password,
+     /* const newadmin = {
+        username: formValues[InputFieldName.USERNAME],
+        password: formValues[InputFieldName.PASSWORD],
       };
-      console.log(newadmin)
+      console.log(newadmin);
       try {
         const { data } = await axios.post(
-          "http://localhost:8070/admin/add",
+          `${Backend_URL}/admin/add`,
           newadmin,
           {
             withCredentials: true,
@@ -200,17 +225,13 @@ export default function Test(props) {
 
       return;*/
     } else if (formName === FormNames.ADMIN_LOGIN) {
-      console.log("Admin Login form submitted");
-      console.log(formValues[InputFieldName.USERNAME]);
-      console.log(formValues[InputFieldName.LOGINPASSWORD]);
-     /*
-      const Admin = {
-        username: UserName,
-        password: Password,
+      /*const Admin = {
+        username: formValues[InputFieldName.USERNAME],
+        password: formValues[InputFieldName.LOGINPASSWORD],
       };
       try {
         const { data } = await axios.post(
-          "http://localhost:8070/admin/login",
+          `${Backend_URL}/admin/login`,
           Admin,
           {
             withCredentials: true,
@@ -228,29 +249,20 @@ export default function Test(props) {
       } catch (error) {
         console.log(error);
       }
-      return;
-      // console.log(UserName);
-      // console.log(Password);*/
+      return;*/
     } else if (formName === FormNames.HOSPITAL_SIGNUP) {
-      console.log("Hospital Signup form submitted");
-      console.log(formValues[InputFieldName.USERNAME]);
-      console.log(formValues[InputFieldName.HOSPITALNAME]);
-      console.log(formValues[InputFieldName.DISTRICT]);
-      console.log(formValues[InputFieldName.TELEPHONE]); 
-      console.log(formValues[InputFieldName.ADDRESS]); 
-      console.log(formValues[InputFieldName.PASSWORD]);
       /*const newhospital = {
-        username: UserName,
-        password: Password,
-        name: HospitalName,
-        district: District,
-        telephone: Number(Telephone),
-        address: Address,
+        username: formValues[InputFieldName.USERNAME],
+        password: formValues[InputFieldName.PASSWORD],
+        name: formValues[InputFieldName.HOSPITALNAME],
+        district: formValues[InputFieldName.DISTRICT],
+        telephone: Number(formValues[InputFieldName.TELEPHONE]),
+        address: formValues[InputFieldName.ADDRESS],
       };
-      console.log(newhospital)
+      console.log(newhospital);
       try {
         const { data } = await axios.post(
-          "http://localhost:8070/hospital/add",
+          `${Backend_URL}/hospital/add`,
           newhospital,
           {
             withCredentials: true,
@@ -270,17 +282,14 @@ export default function Test(props) {
       }
       return;*/
     } else if (formName === FormNames.HOSPITAL_LOGIN) {
-      console.log("Hospital Login form submitted");
-      console.log(formValues[InputFieldName.USERNAME]);
-      console.log(formValues[InputFieldName.LOGINPASSWORD]);
-      /*
+      console.log("Hospital Login form submitted");/*
       const Hospital = {
-        username: UserName,
-        password: Password,
+        username: formValues[InputFieldName.USERNAME],
+        password: formValues[InputFieldName.LOGINPASSWORD],
       };
       try {
         const { data } = await axios.post(
-          "http://localhost:8070/hospital/login",
+          `${Backend_URL}/hospital/login`,
           Hospital,
           {
             withCredentials: true,
@@ -300,26 +309,19 @@ export default function Test(props) {
       }
       return;*/
     } else if (formName === FormNames.BLOODBANK_SIGNUP) {
-      console.log("Bloodbank Signup form submitted");
-      console.log(formValues[InputFieldName.USERNAME]);
-      console.log(formValues[InputFieldName.BLOODBANKNAME]);
-      console.log(formValues[InputFieldName.DISTRICT]);
-      console.log(formValues[InputFieldName.TELEPHONE]); 
-      console.log(formValues[InputFieldName.ADDRESS]); 
-      console.log(formValues[InputFieldName.PASSWORD]);
-     /*
+      console.log("Bloodbank Signup form submitted");/*
       const newbloodBank = {
-        username: UserName,
-        password: Password,
-        name: BloodBankName,
-        district: District,
-        telephone: Number(Telephone),
-        address: Address,
+        username: formValues[InputFieldName.USERNAME],
+        password: formValues[InputFieldName.PASSWORD],
+        name: formValues[InputFieldName.BLOODBANKNAME],
+        district: formValues[InputFieldName.DISTRICT],
+        telephone: Number(formValues[InputFieldName.TELEPHONE]),
+        address: formValues[InputFieldName.ADDRESS],
       };
-      console.log(newbloodBank)
+      console.log(newbloodBank);
       try {
         const { data } = await axios.post(
-          "http://localhost:8070/bloodBank/add",
+          `${Backend_URL}/bloodBank/add`,
           newbloodBank,
           {
             withCredentials: true,
@@ -339,17 +341,14 @@ export default function Test(props) {
       }
       return;*/
     } else if (formName === FormNames.BLOODBANK_LOGIN) {
-      console.log("BLOODBANK Login form submitted");
-      console.log(formValues[InputFieldName.USERNAME]);
-      console.log(formValues[InputFieldName.LOGINPASSWORD]);
-      /*
+      console.log("BLOODBANK Login form submitted");/*
       const BloodBank = {
-        username: UserName,
-        password: Password,
+        username: formValues[InputFieldName.USERNAME],
+        password: formValues[InputFieldName.LOGINPASSWORD],
       };
       try {
         const { data } = await axios.post(
-          "http://localhost:8070/bloodBank/login",
+          `${Backend_URL}/bloodBank/login`,
           BloodBank,
           {
             withCredentials: true,
@@ -377,7 +376,7 @@ export default function Test(props) {
     event.preventDefault();
     const newErrors = validateForm(forms, currentPage, formValues);
 
-    setErrors(newErrors);
+    setErrors(newErrors); // basiaclly means u are setting errors and u can see all errors at once if no onChange event takes place the empty feilds will show
 
     if (Object.keys(newErrors).length === 0) {
       formSubmitted(formValues, props.page);
@@ -407,7 +406,6 @@ export default function Test(props) {
    <div className="loginAndSingupContainer">
       <div className="loginAndSignupSide"><Navigation user={UserTypes.ABOUT}/></div>
       <div className={`${typeOfForm}Container`}>
-        
         <h2 className="loginandsingupheading">{props.page}</h2>
         <hr className="loginAndSingUpLine"></hr>
         <form onSubmit={handleSubmit} className={`${typeOfForm}Form`}>
@@ -415,7 +413,7 @@ export default function Test(props) {
           {currentForm.fields.map((field) => (
            
             <div key={field.name} className={`${typeOfForm}formRows`}>
-              <div className="formLabel"><label htmlFor={field.name}>hello</label></div>
+              <div className="formLabel"><label htmlFor={field.name}>{`${field.label} :`}</label></div>
               <div className="errorContainer">{errors[field.name] && (
                 <span className="error">{errors[field.name]}<br/></span>
               )}</div>
@@ -436,7 +434,7 @@ export default function Test(props) {
                   <div className="dropSignLog">
                     <Dropdown dropdown={DropDown.DISTRICTDROPDOWN}  value={formValues[field.name] || ""}
                         onChange={(e) => handleInputChange(field.name, e.target.value )} /> 
-                  </div>
+                    </div>   
                 ))
               )}
               {field.type === InputType.TEXTAREA && (
@@ -454,7 +452,3 @@ export default function Test(props) {
     </div>
   );
 }
-
-
-
-
